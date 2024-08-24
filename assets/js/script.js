@@ -2,113 +2,211 @@
 
 // Element toggle function
 const elementToggleFunc = function (elem) {
-    elem.classList.toggle("active");
+  elem.classList.toggle("active");
 };
 
-// Sidebar toggle functionality
+// Sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
+// Sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () {
-    elementToggleFunc(sidebar);
+  elementToggleFunc(sidebar);
 });
 
-// Navbar links toggle active state and page navigation
-const navbarLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
+// Testimonials variables
+const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
 
-navbarLinks.forEach((link, index) => {
-    link.addEventListener("click", function () {
-        navbarLinks.forEach(nav => nav.classList.remove("active"));
-        pages.forEach(page => page.classList.remove("active"));
+// Modal variables
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
 
-        this.classList.add("active");
-        pages[index].classList.add("active");
-    });
+// Modal toggle function
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+};
+
+// Add click event to all modal items
+for (let i = 0; i < testimonialsItem.length; i++) {
+  testimonialsItem[i].addEventListener("click", function () {
+    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    testimonialsModalFunc();
+  });
+}
+
+// Add click event to modal close button
+modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+overlay.addEventListener("click", testimonialsModalFunc);
+
+// Custom select variables
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-selecct-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
+
+select.addEventListener("click", function () {
+  elementToggleFunc(this);
 });
 
-// Contact form validation and submission
-const form = document.querySelector("form");
-const formInputs = document.querySelectorAll("input, textarea");
+// Add event in all select items
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+  });
+}
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = new FormData(form);
-    fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            alert("Thank you for your message!");
-            form.reset();
-        } else {
-            alert("Oops! There was a problem submitting your form");
-        }
-    });
-});
+// Filter variables
+const filterItems = document.querySelectorAll("[data-filter-item]");
 
-// Modal functionality for portfolio projects
-const projectItems = document.querySelectorAll(".project-item");
-const modals = document.querySelectorAll(".portfolio-modal-container");
+const filterFunc = function (selectedValue) {
+  for (let i = 0; i < filterItems.length; i++) {
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else if (selectedValue === filterItems[i].dataset.category) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+  }
+}
 
-projectItems.forEach((item, index) => {
+// Add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+  filterBtn[i].addEventListener("click", function () {
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    filterFunc(selectedValue);
+
+    lastClickedBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBtn = this;
+  });
+}
+
+// Contact form variables
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+// Add event to all form input fields
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
+    // Check form validation
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
+    } else {
+      formBtn.setAttribute("disabled", "");
+    }
+  });
+}
+
+// Project modal functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const projectItems = document.querySelectorAll(".project-item");
+  const modals = document.querySelectorAll(".portfolio-modal-container");
+
+  projectItems.forEach((item, index) => {
     item.addEventListener("click", function (event) {
-        event.preventDefault();
-        const modal = modals[index];
-        modal.classList.add("active");
+      event.preventDefault();
 
-        const closeButton = modal.querySelector(".portfolio-modal-close-btn");
-        closeButton.addEventListener("click", function () {
-            modal.classList.remove("active");
-        });
+      // Activate the corresponding modal
+      const modal = modals[index];
+      modal.classList.add("active");
 
-        // Close modal when clicking outside
-        window.addEventListener("click", function outsideClickListener(event) {
-            if (!modal.contains(event.target) && !item.contains(event.target)) {
-                modal.classList.remove("active");
-                window.removeEventListener("click", outsideClickListener);
-            }
-        });
+      // Attach the outside click listener
+      window.addEventListener("click", function outsideClickListener(event) {
+        if (!modal.contains(event.target) && !item.contains(event.target)) {
+          modal.classList.remove("active");
+          window.removeEventListener("click", outsideClickListener);
+        }
+      });
+
+      // Attach close button listener
+      const closeButton = modal.querySelector(".portfolio-modal-close-btn");
+      closeButton.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
     });
+  });
 });
 
 // Share button functionality
-const shareButton = document.getElementById("share-button");
-const shareOptions = document.getElementById("share-options");
+document.addEventListener("DOMContentLoaded", function () {
+  const shareButton = document.getElementById("share-button");
+  const shareOptions = document.getElementById("share-options");
 
-shareButton.addEventListener("click", function () {
-    elementToggleFunc(shareOptions);
-});
-
-// Close share options if clicked outside
-window.addEventListener("click", function (event) {
-    if (!shareButton.contains(event.target) && !shareOptions.contains(event.target)) {
-        shareOptions.classList.remove("active");
+  shareButton.addEventListener("click", function () {
+    shareOptions.classList.toggle("active");
+    if (shareOptions.classList.contains("active")) {
+      shareOptions.style.display = "block";
+    } else {
+      shareOptions.style.display = "none";
     }
+  });
+
+  // Close the share options when clicking outside of it
+  window.addEventListener("click", function (event) {
+    if (!shareButton.contains(event.target) && !shareOptions.contains(event.target)) {
+      shareOptions.style.display = "none";
+      shareOptions.classList.remove("active");
+    }
+  });
 });
+
+// Page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// Add event to all nav links
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+  });
+}
 
 // Scroll effect for home section
-window.addEventListener('scroll', function() {
-    const homeSection = document.querySelector('.home-section');
-    let scrollPos = window.pageYOffset;
-    let opacityValue = 1 - (scrollPos / 500);
+window.addEventListener('scroll', function () {
+  const homeSection = document.querySelector('.home-section');
+  let scrollPos = window.pageYOffset;
+  let opacityValue = 1 - (scrollPos / 500);
 
-    homeSection.style.opacity = opacityValue > 0 ? opacityValue : 0;
+  homeSection.style.opacity = opacityValue > 0 ? opacityValue : 0;
 });
 
 // Navbar hide/show on scroll
 let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-    let navbar = document.querySelector(".navbar");
-    let st = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener("scroll", function () {
+  let navbar = document.querySelector(".navbar");
+  let st = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (st > lastScrollTop) {
-        navbar.style.top = "-60px"; // Hide the navbar on scroll down
-    } else {
-        navbar.style.top = "0"; // Show the navbar on scroll up
-    }
-    lastScrollTop = st <= 0 ? 0 : st;
+  if (st > lastScrollTop) {
+    navbar.style.top = "-60px"; // Hide the navbar on scroll down
+  } else {
+    navbar.style.top = "0"; // Show the navbar on scroll up
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
 }, false);
+
