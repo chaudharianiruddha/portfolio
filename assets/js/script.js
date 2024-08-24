@@ -90,3 +90,25 @@ window.addEventListener("click", function (event) {
     }
 });
 
+// Scroll effect for home section
+window.addEventListener('scroll', function() {
+    const homeSection = document.querySelector('.home-section');
+    let scrollPos = window.pageYOffset;
+    let opacityValue = 1 - (scrollPos / 500);
+
+    homeSection.style.opacity = opacityValue > 0 ? opacityValue : 0;
+});
+
+// Navbar hide/show on scroll
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let navbar = document.querySelector(".navbar");
+    let st = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (st > lastScrollTop) {
+        navbar.style.top = "-60px"; // Hide the navbar on scroll down
+    } else {
+        navbar.style.top = "0"; // Show the navbar on scroll up
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+}, false);
