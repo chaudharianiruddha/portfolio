@@ -7,43 +7,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aniruddha Chaudhari - Personal Portfolio</title>
 
-  <!--
-    - favicon
-  -->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
 
-  <!--
-    - custom css link
-  -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!--
-    - google font link
-  -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Main Container -->
-    <div class="container">
 
-        <!-- Header with Navigation -->
-        <header class="header">
-            <div class="logo">
-                <img src="./assets/images/logo.png" alt="Logo">
+  <!-- Main Content -->
+  <main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/00.jpg" alt="Aniruddha Chaudhari" class="profile-image">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Aniruddha Chaudhari">Aniruddha Chaudhari</h1>
+          <p class="title">Data Science</p>
+          <p class="title">Data Analytics</p>
+          <p class="title">Business Analytics</p>
+          <p class="title">Business Intelligence</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#certification">Certification</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:aniruddha.h.chaudhari@pace.edu" class="contact-link">aniruddha.h.chaudhari@pace.edu</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+15512608579" class="contact-link">+1 (551) 260-8579</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="1998-10-19">October 1998</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>New York, USA</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://github.com/chaudharianiruddha" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/aniruddhachaudhari19" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.instagram.com/aniruddha__chaudhari?igsh=aHh5bndnMDhvbHcy" class="social-link" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+      <div class="home-content">
+        <h1>I'm Aniruddha, a Data Analyst</h1>
+      </div>
+    </section>
 
       <!--
         - #ABOUT
