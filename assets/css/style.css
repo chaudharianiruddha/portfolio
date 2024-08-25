@@ -376,6 +376,133 @@ article.active {
   z-index: -1;
 }
 
+/* General Page Style */
+body {
+  background-color: #000; /* Set background to black */
+  color: #fff; /* Ensure text is readable on black background */
+  font-family: var(--ff-poppins);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+.main-content {
+  width: 75%; /* Keep the main content 75% of the page width */
+  background-color: #1a1a1a; /* Dark background for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 50px; /* Space from the right edge */
+  position: relative;
+}
+
+.left-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background-color: #333; /* Slightly lighter than the main background */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.left-box-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-right: 50px;
+}
+
+.main-content article,
+.main-content .content-card {
+  margin-bottom: 20px;
+}
+
+.main-content article.active,
+.main-content .content-card.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keep the Sidebar Transparent and on the Intro Page */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px; /* Adjust width as necessary */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent for the intro page */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.intro-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000; /* Black background */
+  color: #fff;
+  text-align: left;
+  overflow: hidden;
+}
+
+.intro-content {
+  max-width: 600px;
+  padding-left: 50px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.intro-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  animation: textSlideUp 2s ease-in-out;
+}
+
+/* Scrolling Behavior */
+main {
+  overflow-y: auto;
+  max-height: 100vh;
+  padding: 20px;
+}
+
+/* Page Transition */
+.page {
+  transition: transform 0.5s ease-in-out;
+}
+
+.page.active {
+  transform: translateX(0);
+}
+
+.page.inactive {
+  transform: translateX(100%);
+}
+
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
