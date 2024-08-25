@@ -27,11 +27,18 @@
 
 <body>
 
-    <!-- Fullscreen Intro Section -->
-  <section id="intro" class="intro-section">
+  <!-- Fullscreen Intro Section -->
+  <section class="intro-section">
     <div class="intro-content">
       <h1 class="intro-text">Hello, I am Aniruddha, a Data Analyst.</h1>
       <button class="scroll-button" onclick="scrollToContent()">Explore More</button>
+    </div>
+
+    <!-- Sidebar (Positioned on the right) -->
+    <div class="sidebar" data-sidebar>
+      <div class="sidebar-content">
+        <!-- Sidebar content here -->
+      </div>
     </div>
   </section>
 
@@ -1226,6 +1233,13 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+
+   <script>
+    function scrollToContent() {
+      document.querySelector('main').style.display = 'block'; // Show the main content
+      document.querySelector('.intro-section').style.display = 'none'; // Hide the intro section
+    }
+  </script>
 
   <!--
     - ionicon link
