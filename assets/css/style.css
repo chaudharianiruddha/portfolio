@@ -104,30 +104,31 @@
 
 }
 
-
 /* Fullscreen Intro Section */
 .intro-section {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('./assets/images/00.jpg'); /* Update this path */
+  background-image: url('./assets/images/your-image.jpg'); /* Ensure this path is correct */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: left;
-  padding-left: 50px;
+  justify-content: space-between; /* Sidebar and content on opposite sides */
   color: #fff;
   text-align: left;
   overflow: hidden;
   background-color: #000; /* Fallback color */
 }
 
+/* Intro content styles */
 .intro-content {
   max-width: 600px;
+  padding-left: 50px;
   animation: fadeIn 2s ease-in-out;
 }
 
+/* Intro text styles */
 .intro-text {
   font-size: 3rem;
   font-weight: bold;
@@ -135,6 +136,7 @@
   animation: textSlideUp 2s ease-in-out;
 }
 
+/* Scroll button styles */
 .scroll-button {
   margin-top: 20px;
   padding: 10px 20px;
@@ -151,7 +153,57 @@
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+/* Sidebar positioning */
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px; /* Adjust width as necessary */
+  background-color: rgba(0, 0, 0, 0.7); /* Sidebar background */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
 
+/* Sidebar content styles */
+.sidebar-content {
+  color: #fff;
+}
+
+/* Main content section */
+main {
+  display: none; /* Hide until the intro is scrolled */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes textSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 
 
