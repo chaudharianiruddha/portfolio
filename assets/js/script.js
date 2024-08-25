@@ -1,4 +1,3 @@
-
 'use strict';
 
 // Element toggle function
@@ -9,7 +8,16 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // Sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+if (sidebarBtn) {
+  sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+}
+
+// Function to hide the intro section and show the main content
+function scrollToContent() {
+  document.querySelector('main').style.display = 'block'; // Show the main content
+  document.querySelector('.intro-section').style.display = 'none'; // Hide the intro section
+  document.querySelector('.transparent-sidebar').style.display = 'none'; // Hide the sidebar after scrolling
+}
 
 // Testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -39,12 +47,6 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     testimonialsModalFunc();
   });
 }
-
-function scrollToContent() {
-  document.querySelector('main').style.display = 'block'; // Show the main content
-  document.querySelector('.intro-section').style.display = 'none'; // Hide the intro section
-}
-
 
 // Add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
@@ -103,7 +105,7 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-// Add event to all form input field
+// Add event to all form input fields
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
     // Check form validation
@@ -145,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-//Share button
+// Share button functionality
 document.addEventListener("DOMContentLoaded", function() {
   const shareButton = document.getElementById("share-button");
   const shareOptions = document.getElementById("share-options");
@@ -167,8 +169,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-
-
 
 // Page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
