@@ -41,9 +41,10 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 function scrollToContent() {
-  const mainContent = document.getElementById('main-content');
-  mainContent.scrollIntoView({ behavior: 'smooth' });
+  document.querySelector('main').style.display = 'block'; // Show the main content
+  document.querySelector('.intro-section').style.display = 'none'; // Hide the intro section
 }
+
 
 // Add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
