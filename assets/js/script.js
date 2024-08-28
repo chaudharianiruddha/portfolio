@@ -1,3 +1,4 @@
+
 'use strict';
 
 // Element toggle function
@@ -8,16 +9,7 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // Sidebar toggle functionality for mobile
-if (sidebarBtn) {
-  sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-}
-
-// Function to hide the intro section and show the main content
-function scrollToContent() {
-  document.querySelector('main').style.display = 'block'; // Show the main content
-  document.querySelector('.intro-section').style.display = 'none'; // Hide the intro section
-  document.querySelector('.transparent-sidebar').style.display = 'none'; // Hide the sidebar after scrolling
-}
+sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
 // Testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -47,6 +39,24 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     testimonialsModalFunc();
   });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarLinks = document.querySelectorAll(".navbar-link");
+
+    navbarLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: "smooth"
+            });
+        });
+    });
+});
+
 
 // Add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
@@ -105,7 +115,7 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-// Add event to all form input fields
+// Add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
     // Check form validation
@@ -147,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Share button functionality
+//Share button
 document.addEventListener("DOMContentLoaded", function() {
   const shareButton = document.getElementById("share-button");
   const shareOptions = document.getElementById("share-options");
@@ -169,6 +179,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
 
 // Page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
