@@ -1,3 +1,49 @@
+/* Default Styling for Large Screens */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .single-service, .single-portfolio {
+        flex: 1 1 calc(50% - 20px); /* Two columns on tablets */
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .single-service, .single-portfolio {
+        flex: 1 1 100%; /* Full-width on mobile */
+    }
+
+    .container {
+        padding: 0 5px;
+    }
+
+    .navbar {
+        display: none; /* Collapse the navbar on mobile */
+    }
+}
+
 /* Medium Layout: 1280px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {}
@@ -329,6 +375,24 @@
   width: 100%; /* Ensure the title wrapper aligns to the start */
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .resume .timeline {
+        padding-left: 20px;
+    }
+
+    .resume .timeline-item::before {
+        left: -10px;
+    }
+
+    .resume .h2.article-title {
+        font-size: 2rem;
+    }
+
+    .resume .timeline-item .timeline-item-title {
+        font-size: 1.25rem;
+    }
+}
 
     /*::::::::::::::::::::::::::::::::::::
        Frequently asked questions
