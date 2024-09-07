@@ -10,14 +10,6 @@
     font-size: 2.5rem;
 }
 
-/* Ensure the container has proper width for centering content */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* Section titles should be centered */
 .h2.article-title {
     text-align: center;
@@ -31,7 +23,7 @@
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Adds spacing between timeline items */
+    gap: 20px;
     position: relative;
     padding-left: 50px;
 }
@@ -54,6 +46,7 @@
     background-color: #fff;
     border-radius: 8px;
     margin-bottom: 30px;
+    width: 100%; 
 }
 
 /* Proper sizing for timeline text */
@@ -111,24 +104,55 @@
     font-size: 1.25rem;
 }
 
-/* Aligning the titles of sections to the left */
 .timeline-title-left {
     text-align: left;
     margin-left: 0;
     width: 100%;
 }
 
-/* Responsive Adjustments */
+/* Resume Background - Yellow */
+.resume {
+    padding: 80px 0;
+    background-color: #ffcc00; 
+    position: relative;
+    z-index: 1;
+    font-family: 'Source Sans Pro', sans-serif; 
+}
+
+/* Hover Effects for Timeline */
+.resume .timeline-item:hover {
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Responsive Adjustments for Resume Section */
+@media (min-width: 769px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .resume .timeline {
+        padding-left: 50px;
+    }
+
+    .resume .timeline-item-title {
+        font-size: 1.75rem;
+    }
+
+    .resume .h2.article-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 10px;
     }
 
-    .h2.article-title {
-        font-size: 2rem;
-    }
-
-    .timeline {
+    .resume .timeline {
         padding-left: 20px;
     }
 
@@ -146,7 +170,11 @@
 }
 
 @media (max-width: 480px) {
-    .h2.article-title {
+    .container {
+        padding: 0 5px;
+    }
+
+    .resume .h2.article-title {
         font-size: 1.75rem;
     }
 
@@ -154,8 +182,21 @@
         font-size: 1.25rem;
     }
 
+    .resume .timeline-item span,
+    .resume .timeline-item .timeline-text {
+        font-size: 0.9rem;
+    }
+
+    .resume {
+        padding: 50px 20px;
+    }
+    
     .skills-title {
         font-size: 1.5rem;
+    }
+
+    .timeline-item-title {
+        font-size: 1.2rem;
     }
 }
 
