@@ -236,6 +236,12 @@
     color: #333;
 }
 
+/* Adjust title (name) on mobile */
+.resume .h2.article-title {
+    font-size: 2rem;
+    word-wrap: break-word; /* Ensures that long names don't overflow on mobile */
+}
+
 /* Timeline List */
 .resume .timeline {
     position: relative;
@@ -315,8 +321,9 @@
 @media (max-width: 480px) {
     .resume .h2.article-title {
         font-size: 1.75rem;
+        word-wrap: break-word; /* Adjusts long names to fit mobile screens */
     }
-}
+
     .resume .timeline-item-title {
         font-size: 1.25rem;
     }
@@ -332,17 +339,16 @@
     .resume {
         padding: 50px 20px;
     }
-.resume .timeline-item-title {
-    font-size: 1.75rem !important;
-    color: #333 !important;
+
+    .resume .timeline-item-title {
+        font-size: 1.75rem !important;
+        color: #333 !important;
     }
     
-@media (max-width: 480px) {
     .resume .timeline-item-title {
         font-size: 1.2rem !important; /* Adjust for mobile view */
     }
 }
-
 
 /* Testimonials Section */
 .testimonial {
