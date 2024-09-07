@@ -8,6 +8,7 @@
 
 .hero-content h2 {
     font-size: 2.5rem;
+    text-align: center;
 }
 
 /* Medium Screens (Tablets) */
@@ -45,16 +46,11 @@
 }
 
 /* Medium Layout: 1280px. */
-
 @media only screen and (min-width: 992px) and (max-width: 1200px) {}
 
 /* Tablet Layout: 768px. */
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    /*::::::::::::::::::::::::::::::::::::
-       Main Menu
-    ::::::::::::::::::::::::::::::::::::*/
+    /* Main Menu */
     .navbar.navbar-expand-lg.fixed-top {
         position: static;
         background-color: #000;
@@ -73,35 +69,28 @@
     nav .main-menu .navbar-nav .nav-item .nav-link {
         padding: 15px 15px;
     }
-    /*::::::::::::::::::::::::::::::::::::
-       Hero Area 
-    ::::::::::::::::::::::::::::::::::::*/
+
+    /* Hero Area */
     .hero-content h2 {
         font-size: 70px;
     }
-    /*::::::::::::::::::::::::::::::::::::
-       About Area
-    ::::::::::::::::::::::::::::::::::::*/
+
+    /* About Area */
     .about-content {
         margin-top: 30px;
     }
 
-    /*::::::::::::::::::::::::::::::::::::
-       Service Section
-    ::::::::::::::::::::::::::::::::::::*/
+    /* Service Section */
     .service-area::before {
         height: 100%;
     }
 
-    /*::::::::::::::::::::::::::::::::::::
-       Frequently asked questions
-    ::::::::::::::::::::::::::::::::::::*/
+    /* FAQ Section */
     .faq-content {
         margin-top: 15px;
     }
-    /*::::::::::::::::::::::::::::::::::::
-       Call to Action Area
-    ::::::::::::::::::::::::::::::::::::*/
+
+    /* Call to Action Area */
     .cta-button {
         text-align: left;
         margin-top: 15px;
@@ -109,18 +98,13 @@
 }
 
 /* Mobile Layout: 320px. */
-
 @media only screen and (max-width: 767px) {
-    /*::::::::::::::::::::::::::::::::::::
-       Section Title
-    ::::::::::::::::::::::::::::::::::::*/
+    /* Section Title */
     .section-title h2 {
         font-size: 24px;
     }
 
-    /*::::::::::::::::::::::::::::::::::::
-       Main Menu
-    ::::::::::::::::::::::::::::::::::::*/
+    /* Main Menu */
     .navbar.navbar-expand-lg.fixed-top {
         position: static;
         background-color: #000;
@@ -139,9 +123,8 @@
     nav .main-menu .navbar-nav .nav-item .nav-link {
         padding: 15px 15px;
     }
-    /*::::::::::::::::::::::::::::::::::::
-       Hero Area 
-    ::::::::::::::::::::::::::::::::::::*/
+
+    /* Hero Area */
     .hero-aria,
     .hero-area-slids,
     .single-slider {
@@ -150,12 +133,10 @@
     .hero-content h2 {
         font-size: 30px;
     }
-
     .hero-content h3 {
         font-size: 15px;
         margin: 15px 0;
     }
-
     .hero-aria::after {
         width: 80%;
     }
@@ -163,18 +144,15 @@
         max-width: 70%;
     }
 
-    /*::::::::::::::::::::::::::::::::::::
-       Featured Area
-    ::::::::::::::::::::::::::::::::::::*/
+    /* Featured Area */
     .single-featured-item-wrap h3 {
         font-size: 20px;
     }
     .featured-icon {
         font-size: 40px;
     }
-    /*::::::::::::::::::::::::::::::::::::
-       Portfolio Section
-    ::::::::::::::::::::::::::::::::::::*/
+
+    /* Portfolio Section */
     .work-list ul li {
         margin-bottom: 5px;
     }
@@ -182,9 +160,7 @@
         font-size: 18px;
     }
 
-    /*::::::::::::::::::::::::::::::::::::
-       About Area
-    ::::::::::::::::::::::::::::::::::::*/
+    /* About Area */
     .about-content {
         margin-top: 30px;
     }
@@ -195,28 +171,21 @@
         font-size: 16px;
     }
 
-    /*::::::::::::::::::::::::::::::::::::
-       Service Section
-    ::::::::::::::::::::::::::::::::::::*/
+    /* Service Section */
     .service-area::before {
         height: 100%;
-
     }
-
     .single-service h2 {
         font-size: 24px;
     }
-
     .service-icon {
         font-size: 45px;
     }
 
-    .article-title { margin-bottom: 30px; }
-
-
-  /*::::::::::::::::::::::::::::::::::::
-       Resume
-    ::::::::::::::::::::::::::::::::::::*/
+    .article-title { 
+        margin-bottom: 30px; 
+    }
+}
 
 /* Resume Section Styles */
 .resume {
@@ -224,7 +193,8 @@
     background-color: #f9f9f9;
     position: relative;
     z-index: 1;
-    font-family: 'Source Sans Pro', sans-serif; /* Ensuring consistent font */
+    font-family: 'Source Sans Pro', sans-serif; /* Consistent font */
+    text-align: center; /* Centering all content */
 }
 
 /* Resume Title */
@@ -234,40 +204,50 @@
     margin-bottom: 40px;
     text-align: center;
     color: #333;
+    position: relative;
 }
 
-/* Adjust title (name) on mobile */
-.resume .h2.article-title {
-    font-size: 2rem;
-    word-wrap: break-word; /* Ensures that long names don't overflow on mobile */
+/* Box Under Resume Title */
+.resume::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #ffcc00;
+    margin: 20px auto 0 auto;
 }
 
 /* Timeline List */
 .resume .timeline {
     position: relative;
     padding-left: 50px;
+    max-width: 900px; /* Ensuring it fits larger screens properly */
+    margin: 0 auto;
+    margin-top: 40px;
 }
 
 .resume .timeline::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     width: 2px;
     height: 100%;
     background-color: #ffcc00;
+    transform: translateX(-50%);
 }
 
 .resume .timeline-item {
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #e0e0e0; /* Add subtle dividers between items */
+    width: 45%; /* Adjusts timeline item width */
+    float: left; /* Ensures items float to left */
+    clear: both;
 }
 
-.resume .timeline-item:last-child {
-    margin-bottom: 0;
-    border-bottom: none; /* Remove the bottom border for the last item */
+.resume .timeline-item:nth-child(even) {
+    float: right; /* Alternates items to the right for even items */
 }
 
 .resume .timeline-item-title {
@@ -275,6 +255,7 @@
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .resume .timeline-item span {
@@ -305,8 +286,16 @@
         padding-left: 20px;
     }
 
-    .resume .timeline-item::before {
-        left: -10px;
+    .resume .timeline-item {
+        width: 100%; /* Full width on mobile */
+        float: none;
+        text-align: left;
+    }
+
+    .resume .timeline::before {
+        left: 0;
+        width: 2px;
+        transform: none;
     }
 
     .resume .h2.article-title {
