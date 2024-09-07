@@ -26,12 +26,11 @@
     align-items: center; /* Center content */
 }
 
-.resume .h2.article-title {
-    font-size: 2.5rem;
-    text-align: center;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 40px;
+/* Remove number list and style Education & Projects */
+.resume .timeline .title-wrapper h3 {
+    text-align: center; /* Center heading */
+    font-weight: bold; /* Bold */
+    margin-bottom: 20px;
 }
 
 .resume .timeline {
@@ -41,16 +40,39 @@
     position: relative;
 }
 
-.resume .timeline::before {
+/* Double thickness and black timeline for Education */
+.resume .timeline-education::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 2px;
+    width: 4px; /* Double the thickness */
     height: 100%;
-    background-color: #fff; /* White line for the timeline */
+    background-color: #000; /* Black timeline */
 }
 
+.resume .timeline-education-item:last-child::before {
+    height: auto; /* Ensure that the last item properly closes the timeline */
+    bottom: 0;
+}
+
+/* Double thickness and black timeline for Projects */
+.resume .timeline-projects::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px; /* Double the thickness */
+    height: 100%;
+    background-color: #000; /* Black timeline */
+}
+
+.resume .timeline-project-item:last-child::before {
+    height: auto; /* Ensure that the last item properly closes the timeline */
+    bottom: 0;
+}
+
+/* Timeline Item */
 .resume .timeline-item {
     position: relative;
     padding: 20px;
@@ -59,6 +81,12 @@
     border-radius: 8px;
     margin-bottom: 30px;
     width: 100%;
+}
+
+/* Remove list numbers for Education and Projects */
+.resume .timeline-list {
+    list-style: none;
+    padding-left: 0;
 }
 
 .resume .timeline-item-title {
@@ -92,6 +120,7 @@
     margin-bottom: 20px;
 }
 
+/* Certifications Section */
 .certifications {
     margin-top: 20px;
 }
@@ -112,6 +141,13 @@
 .title-wrapper h5 {
     font-weight: bold;
     font-size: 1.25rem;
+}
+
+/* Aligning the titles of sections to the left */
+.timeline-title-left {
+    text-align: left;
+    margin-left: 0;
+    width: 100%;
 }
 
 /* Responsive Adjustments */
@@ -199,6 +235,21 @@
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .testimonial {
+        padding: 20px;
+    }
+
+    .single-testimonial {
+        margin-bottom: 30px;
+    }
+
+    .mapbox {
+        height: 250px;
+    }
 }
 
 
