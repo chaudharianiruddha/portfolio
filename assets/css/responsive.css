@@ -10,6 +10,156 @@
     font-size: 2.5rem;
 }
 
+/* Ensure the container has proper width for centering content */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section titles should be centered */
+.h2.article-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Timeline Section */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between timeline items */
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #ffcc00;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* Proper sizing for timeline text */
+.timeline-item-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.timeline-item span {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.timeline-text {
+    color: #777;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Skills Section */
+.skill {
+    padding-top: 30px;
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Certifications Section */
+.certifications {
+    margin-top: 20px;
+}
+
+.skills-list {
+    padding: 0;
+    list-style: none;
+}
+
+.skills-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.title-wrapper h5 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Aligning the titles of sections to the left */
+.timeline-title-left {
+    text-align: left;
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .h2.article-title {
+        font-size: 2rem;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        padding: 10px;
+    }
+
+    .timeline-item-title {
+        font-size: 1.5rem;
+    }
+
+    .skills-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .h2.article-title {
+        font-size: 1.75rem;
+    }
+
+    .timeline-item-title {
+        font-size: 1.25rem;
+    }
+
+    .skills-title {
+        font-size: 1.5rem;
+    }
+}
+
+
 /* Medium Screens (Tablets) */
 @media (max-width: 768px) {
     .hero-content h2 {
