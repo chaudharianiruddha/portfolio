@@ -187,6 +187,53 @@
     }
 }
 
+/* General Section Spacing */
+.section-padding {
+    padding: 80px 0; /* Ensures sufficient top and bottom space */
+}
+
+.pb-70 {
+    padding-bottom: 70px;
+}
+
+/* Resume Section Adjustments */
+.resume {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+.timeline {
+    margin-bottom: 50px;
+}
+
+.skill, .certifications {
+    margin-top: 50px;
+}
+
+/* Portfolio Section Adjustments */
+.portfolio-area {
+    padding: 100px 0;
+}
+
+.single-portfolio {
+    margin-bottom: 30px; /* Ensures proper space between items */
+}
+
+/* Blog Section Adjustments */
+.blog-section {
+    padding: 100px 0;
+}
+
+.single-blog {
+    margin-bottom: 30px; /* Adds space between blog entries */
+}
+
+/* Navigation Menu Z-index Fix */
+.navbar {
+    z-index: 9999; /* Ensures the navbar is always on top */
+}
+
+
 /* Resume Section Styles */
 .resume {
     padding: 80px 0;
