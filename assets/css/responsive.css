@@ -110,7 +110,7 @@
 
 /* Skills Section */
 .skill {
-    padding-top: 30px;
+    padding: 50px 0;
 }
 
 .skills-title {
@@ -121,22 +121,19 @@
 }
 
 .skills-list {
-    padding: 0;
     list-style: none;
+    padding: 0;
+    text-align: center; 
 }
 
-.skills-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #fff;
+.skills-list li {
+    display: inline-block;
+    margin: 0 10px; 
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
 }
 
-.title-wrapper h5 {
-    font-weight: bold;
-    font-size: 1.25rem;
-}
 
 /* Certifications Section */
 .certifications {
