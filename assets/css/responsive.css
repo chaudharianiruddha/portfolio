@@ -108,12 +108,51 @@
     line-height: 1.6;
 }
 
+/* Skills Section */
+.skill {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* List for Technical Skills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the list items */
+    padding: 0;
+    list-style: none;
+    margin-bottom: 40px; /* Adds space between skills and certifications */
+}
+
+.skills-list li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 15px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 /* Certifications Section */
 .certifications {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .skills-item {
@@ -123,12 +162,16 @@
     border-radius: 8px;
     border: 1px solid #e0e0e0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Make all certifications same width */
+    width: 300px; /* Fixed width for consistency */
+    min-height: 150px; /* Ensure height consistency */
     text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures consistent layout */
 }
 
 .skills-item .title-wrapper h5 {
-    font-size: 1.25rem;
+    font-size: 1.75rem; /* Adjusted to match other section titles */
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -136,6 +179,13 @@
 .certification-description {
     font-size: 1rem;
     color: #555;
+    padding: 0 10px; /* Add some padding for text readability */
+}
+
+/* Consistent Container Size */
+.skills-item {
+    width: 320px; /* Ensure certifications have consistent width */
+    height: 180px; /* Ensure certifications have consistent height */
 }
 
 /* Responsive Design Adjustments */
@@ -145,9 +195,21 @@
     }
 
     .skills-item {
-        width: 100%;
+        width: 100%; /* Full-width on mobile for better readability */
     }
 }
+
+@media (max-width: 480px) {
+    .skills-item {
+        width: 100%; /* Ensure certifications take full width on smaller screens */
+        height: auto;
+    }
+
+    .skills-title {
+        font-size: 1.5rem;
+    }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .container {
