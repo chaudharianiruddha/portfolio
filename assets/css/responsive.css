@@ -33,22 +33,24 @@
     margin-bottom: 20px;
 }
 
+/* Timeline: Black and double thickness */
 .resume .timeline {
     width: 100%;
     max-width: 800px;
-    padding-left: 50px;
     position: relative;
+    padding-left: 50px;
 }
 
-/* Double thickness and black timeline for Education */
+/* Add Timeline Line for Education */
 .resume .timeline-education::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20px; /* Adjusted left padding to make the line visible */
     width: 4px; /* Double the thickness */
     height: 100%;
     background-color: #000; /* Black timeline */
+    z-index: -1;
 }
 
 .resume .timeline-education-item:last-child::before {
@@ -56,15 +58,16 @@
     bottom: 0;
 }
 
-/* Double thickness and black timeline for Projects */
+/* Add Timeline Line for Projects */
 .resume .timeline-projects::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20px; /* Adjusted left padding to make the line visible */
     width: 4px; /* Double the thickness */
     height: 100%;
     background-color: #000; /* Black timeline */
+    z-index: -1;
 }
 
 .resume .timeline-project-item:last-child::before {
@@ -110,10 +113,7 @@
 
 /* Skills Section */
 .skill {
-    padding: 50px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the content */
+    padding-top: 30px;
 }
 
 .skills-title {
@@ -123,91 +123,34 @@
     margin-bottom: 20px;
 }
 
-/* List for Technical Skills */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the list items */
-    padding: 0;
-    list-style: none;
-    margin-bottom: 40px; /* Adds space between skills and certifications */
-}
-
-.skills-list li {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 5px 15px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 /* Certifications Section */
 .certifications {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
+}
+
+.skills-list {
+    padding: 0;
+    list-style: none;
 }
 
 .skills-item {
-    margin: 10px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Fixed width for consistency */
-    min-height: 150px; /* Ensure height consistency */
-    text-align: center; /* Center the text */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensures consistent layout */
+    border-radius: 8px;
+    background-color: #fff;
 }
 
-.skills-item .title-wrapper h5 {
-    font-size: 1.75rem; /* Adjusted to match other section titles */
+.title-wrapper h5 {
     font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.25rem;
 }
 
-.certification-description {
-    font-size: 1rem;
-    color: #555;
-    padding: 0 10px; /* Add some padding for text readability */
-}
-
-/* Consistent Container Size */
-.skills-item {
-    width: 320px; /* Ensure certifications have consistent width */
-    height: 180px; /* Ensure certifications have consistent height */
-}
-
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-    .skills-list {
-        flex-direction: column;
-    }
-
-    .skills-item {
-        width: 100%; /* Full-width on mobile for better readability */
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-item {
-        width: 100%; /* Ensure certifications take full width on smaller screens */
-        height: auto;
-    }
-
-    .skills-title {
-        font-size: 1.5rem;
-    }
+/* Aligning the titles of sections to the left */
+.timeline-title-left {
+    text-align: left;
+    margin-left: 0;
+    width: 100%;
 }
 
 /* Responsive Adjustments */
@@ -311,8 +254,6 @@
         height: 250px;
     }
 }
-
-
 
 /* Medium Screens (Tablets) */
 @media (max-width: 768px) {
