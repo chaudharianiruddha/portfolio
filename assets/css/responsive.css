@@ -120,6 +120,24 @@
     margin-bottom: 20px;
 }
 
+.skills-list {
+    padding: 0;
+    list-style: none;
+}
+
+.skills-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.title-wrapper h5 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
 /* Certifications Section */
 .certifications {
     margin-top: 20px;
