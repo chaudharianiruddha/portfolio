@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h2>Customer Churn Analysis</h2>
+                        <h2>Aircraft Delay Analysis</h2>
                     </div>
                 </div>
             </div>
@@ -61,27 +61,59 @@
     <!-- ====== // Header ====== -->
 
     <!-- Blog Section -->
-    <section class="blog-section">
+     <section class="blog-section">
         <div class="container">
             <div class="row">
-                <!-- Blog Main Content -->
-                <div class="col-lg-8 col-md-12"> <!-- Add col-md-12 for responsiveness on medium devices -->
+                <div class="col-lg-8 col-md-12">
                     <div class="blog-post">
-                        <img src="assets/images/blog/img-1.jpg" alt="" class="blog-img">
-                        <h4 class="blog-title"><a href="#">Safs is Full Responsive Web site Template</a></h4>
-                        <p class="blog-meta"><a class="user-name" href="#">AL Mamun</a><span class="blog-date">22 FEB 2018</span><a href="#" class="blog-comment">Comments (05)</a></p>
-                        <div class="blog-main-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore inventore nam laborum maiores aspernatur magni, totam laudantium incidunt. Itaque quia nostrum aliquam amet officiis pariatur obcaecati nulla autem facere quasi natus eligendi corporis facilis ducimus rerum omnis deserunt! Accusamus quidem quasi. Illo minus, magni commodi, tempore asperiores eligendi dolor obcaecati alias corporis assumenda! Deleniti laborum voluptatem blanditiis</p>
+                        <img src="assets/images/aircraft_delay_1.jpg" alt="" class="blog-img">
+                         <h4 class="blog-title"><a href="#">Aircraft Delay Analysis</a></h4>
+                        <p>Flight delays are a significant challenge for airlines, leading to customer dissatisfaction and operational inefficiencies. This analysis aims to identify the key factors behind flight delays and develop a predictive model that helps minimize disruptions.</p>
 
-                            <blockquote class="blockquote bg-light">
-                                <h6>Lorem ipsum dolor sit amet, consectetur.</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet totam, numquam? Voluptatum in voluptates quibusdam.</p>
-                            </blockquote>
+                        <h5>Data Collection</h5>
+                        <p>The dataset includes critical information such as departure and arrival times, weather conditions, airline details (carrier, flight route), distance between airports, and the delay time in minutes. Data was collected from public aviation databases and cleaned to ensure completeness.</p>
 
-                            <p>ducimus odit dolor reiciendis assumenda commodi animi repudiandae rem libero non? Non reiciendis, quis, laudantium perspiciatis fugit ex. Deserunt itaque ad, corrupti beatae quos perferendis provident, ullam voluptates nam, sequi quia Inventore beatae tempore doloribus delectus pariatur officia non asperiores et aliquam voluptatibus sint, sit, eligendi, voluptatum deleniti optio similique? Deleniti recusandae, a quo cumque magnam repellat distinctio accusantium mollitia aspernatur hic, architecto et officiis consequatur voluptate unde. Sed quod dignissimos voluptatibus animi veniam ducimus, nemo nobis quisquam, tempora reiciendis doloribus sit error. Rem accusamus deserunt repellat. Mollitia molestiae, cupiditate suscipit laboriosam unde.</p>
-                        </div>
+                        <h5>Data Preprocessing</h5>
+                        <p>To prepare the data for modeling, several preprocessing steps were followed:</p>
+                        <ul>
+                            <li><strong>Handling Missing Values:</strong> Missing weather data and incomplete flight records were either removed or imputed using average values.</li>
+                            <li><strong>Outliers:</strong> Flights with extreme delays exceeding 12 hours were considered outliers and excluded.</li>
+                            <li><strong>Feature Engineering:</strong> New features were created, including departure hour, distance traveled, day of the week, and weather conditions, which were essential in enhancing model performance.</li>
+                        </ul>
+
+                        <h5>Exploratory Data Analysis</h5>
+                        <p>During EDA, several interesting patterns emerged:</p>
+                        <ul>
+                            <li><strong>Flight Delays by Time of Day:</strong> Afternoon flights between 12 PM and 6 PM experienced the most frequent delays, while early morning flights had fewer delays.</li>
+                            <li><strong>Weather Impact:</strong> Flights during storms or heavy rain were significantly more likely to experience delays.</li>
+                            <li><strong>Correlation Analysis:</strong> The strongest correlations were found between weather conditions, distance traveled, and flight delays.</li>
+                        </ul>
+
+                        <h5>Model Development</h5>
+                        <p>Several machine learning models were developed:</p>
+                        <ul>
+                            <li><strong>Logistic Regression:</strong> This was used as the baseline model to classify delayed vs. non-delayed flights.</li>
+                            <li><strong>Random Forest:</strong> To capture non-linear relationships in the data, Random Forest was applied.</li>
+                            <li><strong>Gradient Boosting (XGBoost):</strong> To further enhance prediction performance, XGBoost was implemented, focusing on misclassified cases.</li>
+                            <li><strong>Hyperparameter Tuning:</strong> Using GridSearchCV, model parameters like tree depth and the number of estimators were optimized for both Random Forest and XGBoost.</li>
+                        </ul>
+
+                        <h5>Model Evaluation</h5>
+                        <ul>
+                            <li><strong>Accuracy:</strong> 85%</li>
+                            <li><strong>AUC-ROC:</strong> 0.90, indicating a strong ability to distinguish between delayed and non-delayed flights.</li>
+                            <li><strong>Confusion Matrix:</strong> The model showed a slight bias toward predicting non-delays, with fewer false negatives than false positives.</li>
+                        </ul>
+
+                        <blockquote class="blockquote bg-light">
+                            <h6>Conclusion & Recommendations</h6>
+                            <p>The analysis revealed that weather conditions and flight time were the most significant predictors of delays. Airlines are recommended to implement predictive models for better schedule management, especially during adverse weather conditions. An early warning system based on weather forecasts could also be introduced to mitigate delays.</p>
+                        </blockquote>
+
+                        <img src="assets/images/aircraft_delay_2.jpg" alt="" class="blog-img">
                     </div>
-                </div>
+            </div>
+       
                 <!-- // Blog Main Content -->
 
                 <!-- Sidebar -->
@@ -151,6 +183,8 @@
                     </div>
                 </div>
                 <!-- // Sidebar -->
+                </div>
+              </div>
             </div>
         </div>
     </section>
