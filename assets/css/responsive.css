@@ -33,6 +33,14 @@
     transition: width 2s ease-in-out; /* Animation effect */
 }
 
+.skill-bar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 100%;
+    line-height: 25px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 480px) {
     .skills-title {
