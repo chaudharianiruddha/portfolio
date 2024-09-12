@@ -17,19 +17,19 @@
 /* Resume Section */
 .resume {
     padding: 80px 0;
-    background-color: #ffcc00 !important; /* Yellow background */
+    background-color: #ffcc00 !important;
     position: relative;
     z-index: 1;
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content */
+    align-items: center;
 }
 
 /* Remove number list and style Education & Projects */
 .resume .timeline .title-wrapper h3 {
-    text-align: center; /* Center heading */
-    font-weight: bold; /* Bold */
+    text-align: center;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
@@ -41,41 +41,18 @@
     padding-left: 50px;
 }
 
-/* Add Timeline Line for Education */
-.resume .timeline-education::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 20px; /* Adjusted left padding to make the line visible */
-    width: 4px; /* Double the thickness */
-    height: 100%;
-    background-color: #000; /* Black timeline */
-    z-index: -1;
-}
-
-.resume .timeline-education-item:last-child::before {
-    height: auto; /* Ensure that the last item properly closes the timeline */
-    bottom: 0;
-}
-
-/* Add Timeline Line for Projects */
+.resume .timeline-education::before,
 .resume .timeline-projects::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 20px; /* Adjusted left padding to make the line visible */
-    width: 4px; /* Double the thickness */
+    left: 20px;
+    width: 4px;
     height: 100%;
-    background-color: #000; /* Black timeline */
+    background-color: #000;
     z-index: -1;
 }
 
-.resume .timeline-project-item:last-child::before {
-    height: auto; /* Ensure that the last item properly closes the timeline */
-    bottom: 0;
-}
-
-/* Timeline Item */
 .resume .timeline-item {
     position: relative;
     padding: 20px;
@@ -86,7 +63,6 @@
     width: 100%;
 }
 
-/* Remove list numbers for Education and Projects */
 .resume .timeline-list {
     list-style: none;
     padding-left: 0;
@@ -123,7 +99,6 @@
     margin-bottom: 20px;
 }
 
-/* Certifications Section */
 .certifications {
     margin-top: 20px;
 }
@@ -146,7 +121,6 @@
     font-size: 1.25rem;
 }
 
-/* Aligning the titles of sections to the left */
 .timeline-title-left {
     text-align: left;
     margin-left: 0;
@@ -174,6 +148,11 @@
     .skills-title {
         font-size: 1.75rem;
     }
+
+    /* Navbar Fix */
+    .navbar {
+        display: block !important; /* Ensure it's visible on mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -197,13 +176,27 @@
     .resume {
         padding: 50px 20px;
     }
-    
+
     .skills-title {
         font-size: 1.5rem;
     }
 
     .timeline-item-title {
         font-size: 1.2rem;
+    }
+
+    /* Fix hero section for mobile */
+    .hero-content h2 {
+        font-size: 30px !important; /* Adjust for mobile */
+    }
+
+    /* Scroll fix after testimonials */
+    .testimonial {
+        margin-bottom: 50px !important;
+    }
+
+    body, html {
+        overflow-x: hidden;
     }
 }
 
@@ -290,11 +283,9 @@
 }
 
 /* Medium Layout: 1280px. */
-
 @media only screen and (min-width: 992px) and (max-width: 1200px) {}
 
 /* Tablet Layout: 768px. */
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
     /*::::::::::::::::::::::::::::::::::::
@@ -354,7 +345,6 @@
 }
 
 /* Mobile Layout: 320px. */
-
 @media only screen and (max-width: 767px) {
     /*::::::::::::::::::::::::::::::::::::
        Section Title
@@ -501,16 +491,16 @@
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #e0e0e0; /* Add subtle dividers between items */
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .resume .timeline-item:last-child {
     margin-bottom: 0;
-    border-bottom: none; /* Remove the bottom border for the last item */
+    border-bottom: none;
 }
 
 .resume .timeline-item-title {
-    font-size: 1.75rem; /* Adjusted for better visibility */
+    font-size: 1.75rem;
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
@@ -530,7 +520,6 @@
     margin-bottom: 15px;
 }
 
-/* Hover Effects for Timeline */
 .resume .timeline-item:hover {
     background-color: #ffffff;
     transition: all 0.3s ease;
@@ -553,7 +542,7 @@
     }
 
     .resume .timeline-item .timeline-item-title {
-        font-size: 1.5rem; /* Slightly smaller title for mobile */
+        font-size: 1.5rem;
     }
 }
 
@@ -561,7 +550,7 @@
     .resume .h2.article-title {
         font-size: 1.75rem;
     }
-}
+
     .resume .timeline-item-title {
         font-size: 1.25rem;
     }
@@ -584,10 +573,9 @@
     
 @media (max-width: 480px) {
     .resume .timeline-item-title {
-        font-size: 1.2rem !important; /* Adjust for mobile view */
+        font-size: 1.2rem !important;
     }
 }
-
 
 /* Testimonials Section */
 .testimonial {
@@ -612,7 +600,6 @@
     color: #555;
 }
 
-/* Contact Form */
 .contact-form {
     background: #f9f9f9;
     padding: 40px;
@@ -620,7 +607,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Mapbox Styles */
 .mapbox {
     position: relative;
     height: 450px;
