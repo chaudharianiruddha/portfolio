@@ -653,6 +653,21 @@
     filter: grayscale(1);
 }
 
+.bg-white {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+.shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 480px) {
     .testimonial {
