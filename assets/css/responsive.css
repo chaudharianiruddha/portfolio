@@ -14,17 +14,6 @@
     color: #333;
 }
 
-/* Reset navigation bar to scroll with the page on mobile */
-@media only screen and (max-width: 767px) {
-    .navbar.navbar-expand-lg {
-        position: static !important; /* Change from fixed to static */
-        background-color: #000; /* Ensure background color is preserved */
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-}
-
 /* Resume Section */
 .resume {
     padding: 80px 0;
@@ -163,6 +152,52 @@
     /* Navbar Fix */
     .navbar {
         display: block !important; /* Ensure it's visible on mobile */
+    }
+}
+
+/* Navbar Adjustments for Mobile */
+@media only screen and (max-width: 767px) {
+    .navbar {
+        position: relative !important; /* Change from fixed to relative */
+        background-color: #000; /* Ensure the background is set */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1; /* Ensure the navbar stays on top */
+    }
+
+    /* Ensure dropdowns and mobile menu appear correctly */
+    .navbar-collapse {
+        position: relative;
+        background-color: #333; /* Adjust color if needed */
+        z-index: 1;
+    }
+
+    /* Mobile Menu Adjustments */
+    .navbar-toggler {
+        background-color: #fff; /* Customize the mobile menu toggle button */
+        border: none;
+    }
+
+    /* Navbar Links Styling for Mobile */
+    .navbar-nav .nav-link {
+        padding: 15px 20px;
+        color: #fff; /* White text for the links */
+    }
+
+    /* Dropdown Menu for Mobile */
+    .dropdown-menu {
+        position: relative;
+        background-color: #333;
+        z-index: 1;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar {
+        position: static !important; /* Change from fixed to static on tablets */
+        background-color: #000; /* Background color of navbar */
     }
 }
 
