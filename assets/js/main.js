@@ -128,20 +128,24 @@
 
 }(jQuery));
 
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const skillbars = document.querySelectorAll('.skillbar');
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const skillbar = entry.target;
-        const fill = skillbar.querySelector('.skillbar-bar');
-        const percent = skillbar.getAttribute('data-percent');
-        fill.style.width = percent;
-        observer.unobserve(skillbar); // Animate only once
+        const bar = entry.target.querySelector('.skillbar-bar');
+        const percent = entry.target.getAttribute('data-percent');
+        bar.style.width = percent;
+        obs.unobserve(entry.target); // animate once
       }
     });
-  }, { threshold: 0.4 });
+  }, {
+    threshold: 0.4
+  });
 
-  skillbars.forEach(skillbar => observer.observe(skillbar));
+  skillbars.forEach(skillbar => {
+    observer.observe(skillbar);
+  });
 });
+
