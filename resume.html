@@ -1,175 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Paste this entire section into your portfolio -->
+<section id="resume" class="section-padding resume pb-70" style="background-color: #f0f2f5; padding: 40px 0;">
+  <div class="container">
+    <div class="content-card" style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 900px; margin: 0 auto;">
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta charset="UTF-8">
-  <title>Aniruddha Chaudhari - Resume</title>
+      <!-- Header with Contact Info -->
+      <div class="text-center" style="margin-bottom: 30px;">
+        <h2 class="h2 article-title">Aniruddha Chaudhari</h2>
+        <p>Jersey City, New Jersey 07306</p>
+        <p><a href="mailto:aniruddha.h.chaudhari@pace.edu">aniruddha.h.chaudhari@pace.edu</a> | (551)-260-8579</p>
+        <p><a href="https://aniruddhachaudhari.com" target="_blank">aniruddhachaudhari.com</a></p>
+      </div>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+      <!-- Technical Skills -->
+      <section class="skills" style="margin-bottom: 30px;">
+        <h3 class="h3 skills-title">Technical Skills</h3>
+        <ul class="skills-list">
+          <li><strong>Programming Languages:</strong> Python, R</li>
+          <li><strong>Machine Learning & Data Science:</strong> Scikit-Learn, TensorFlow, NLP (SpaCy, NLTK), NumPY, Pandas, PyTorch, XGBoost, LightGBM, CatBoost, Feature Engineering, Model Optimization</li>
+          <li><strong>Database Management:</strong> MySQL, SQL, NoSQL, Snowflake</li>
+          <li><strong>Data Visualization & Analytics:</strong> Power BI, Tableau, Matplotlib, Seaborn</li>
+          <li><strong>MLOps & Deployment:</strong> Docker, Kubernetes, FastAPI, Flask, Model Monitoring (MLflow, TensorBoard)</li>
+          <li><strong>Big Data & Cloud:</strong> Google Cloud Platform (GCP), AWS, Apache Spark, Hadoop, Apache Kafka</li>
+          <li><strong>Spreadsheets:</strong> MS Excel, Google Sheets</li>
+        </ul>
+      </section>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="assets/css/lightbox.min.css">
-  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/css/animate.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
+      <!-- Experience -->
+      <section class="timeline" style="margin-bottom: 30px;">
+        <div class="title-wrapper">
+          <div class="icon-box">
+            <ion-icon name="briefcase-outline"></ion-icon>
+          </div>
+          <h3 class="h3 timeline-title-left">Experience</h3>
+        </div>
+        <ol class="timeline-list">
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Heuristics Pharma Perception – Data Analyst</h4>
+            <span>January 2025 – Present | New York, NY</span>
+            <ul class="timeline-text">
+              <li>Engineered a model-serving infrastructure using Kubernetes and FastAPI, reducing model inference time by 30%...</li>
+              <li>Developed an embeddings-based similarity model using FAISS and OpenAI embeddings...</li>
+              <li>Built and fine-tuned NLP pipelines leveraging BERT models for automated entity recognition...</li>
+              <li>Integrated a high-speed vector search pipeline with Neo4j and Elasticsearch...</li>
+              <li>Automated model monitoring and retraining workflows using MLflow & Prefect...</li>
+              <li>Orchestrated ETL workflows for unstructured data processing using Apache Airflow...</li>
+            </ul>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Sriroz Consultants Private Limited – Business Analyst</h4>
+            <span>November 2021 – July 2023 | Pune, India</span>
+            <ul class="timeline-text">
+              <li>Redesigned SQL-based sales reports to integrate real-time customer purchase behavior analysis...</li>
+              <li>Performed exploratory data analysis (EDA) on customer retention patterns...</li>
+              <li>Developed interactive Power BI dashboards that automated sales reporting...</li>
+              <li>Integrated Python-based CRM automation to track lead-to-conversion journeys...</li>
+              <li>Conducted competitive pricing analysis using web-scraped competitor data...</li>
+              <li>Implemented customer segmentation models to refine marketing strategies...</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
 
-<body data-spy="scroll" data-target=".navbar-nav">
+      <!-- Academic Projects -->
+      <section class="timeline" style="margin-bottom: 30px;">
+        <div class="title-wrapper">
+          <div class="icon-box">
+            <ion-icon name="code-outline"></ion-icon>
+          </div>
+          <h3 class="h3 timeline-title-left">Academic Projects</h3>
+        </div>
+        <ol class="timeline-list">
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">AI-Powered Patient Risk Prediction System</h4>
+            <span>January 2025 – March 2025</span>
+            <ul class="timeline-text">
+              <li>Developed a machine learning model for early patient readmission risk detection using XGBoost & Random Forest...</li>
+              <li>Automated patient data ingestion using Apache Airflow from EHRs and wearable devices...</li>
+              <li>Implemented real-time monitoring with Kafka & Apache Spark Streaming...</li>
+              <li>Extracted patient risk indicators using BERT models from unstructured physician notes...</li>
+              <li>Deployed model in a HIPAA-compliant AWS + Kubernetes cloud infrastructure...</li>
+            </ul>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Emotional Chatbot for Multimodal Emotion Recognition</h4>
+            <span>December 2024</span>
+            <ul class="timeline-text">
+              <li>Developed chatbot integrating text-based NLP and voice-based CNN analysis, achieving 90% accuracy...</li>
+              <li>Created personalized API-based recommendations (Spotify, YouTube, Eventbrite)...</li>
+              <li>Applied cross-validation (F1-score: 0.88) and data augmentation for model robustness...</li>
+              <li>Built Flask-based web interface for real-time applications in healthcare and education...</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
 
-<section id="resume" class="section-padding resume pb-70">
-  <div class="content-card text-center" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px;">
-    <h2 class="h2 article-title">Aniruddha Chaudhari</h2>
-    <p>Jersey City, New Jersey 07306</p>
-    <p><a href="mailto:aniruddha.h.chaudhari@pace.edu">aniruddha.h.chaudhari@pace.edu</a> | (551)-260-8579</p>
-    <p><a href="https://aniruddhachaudhari.com" target="_blank">aniruddhachaudhari.com</a></p>
+      <!-- Certifications -->
+      <section class="certifications" style="margin-bottom: 30px;">
+        <h3 class="h3 skills-title">Certifications</h3>
+        <ul class="skills-list">
+          <li>Learning SnowflakeDB</li>
+          <li>Microsoft Project for the Web: Reporting with Power BI</li>
+          <li>MySQL Data Analysis</li>
+          <li>BCG - Data Science Job Simulation</li>
+          <li>Goldman Sachs - Software Engineering Job Simulation</li>
+          <li>Quantium - Data Analytics Job Simulation</li>
+          <li>R for Data Science: Analysis and Visualization</li>
+          <li>Excel Skills for Business: Intermediate I & II</li>
+        </ul>
+      </section>
+
+      <!-- Education -->
+      <section class="timeline">
+        <div class="title-wrapper">
+          <div class="icon-box">
+            <ion-icon name="school-outline"></ion-icon>
+          </div>
+          <h3 class="h3 timeline-title-left">Education</h3>
+        </div>
+        <ol class="timeline-list">
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Pace University, Seidenberg School of Computer Science and Information Systems</h4>
+            <span>2023 – 2025 | New York</span>
+            <p class="timeline-text">MS in Information Systems | Concentration: Information Systems | Honors: Masters</p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Savitribai Phule Pune University – Modern Institute of Business Studies</h4>
+            <span>2020 – 2022 | Pune, India</span>
+            <p class="timeline-text">MBA | Concentration: Business Analytics | Honors: Masters</p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Savitribai Phule Pune University – Dr. D. Y. Patil College</h4>
+            <span>2017 – 2020 | Pune, India</span>
+            <p class="timeline-text">BBA | Concentration: HR Management | Honors: Bachelors</p>
+          </li>
+        </ol>
+      </section>
+
+    </div>
   </div>
-
-  <!-- Technical Skills -->
-  <section class="skills">
-    <div class="content-card" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px;">
-      <h3 class="h3 skills-title">Technical Skills</h3>
-      <ul class="skills-list">
-        <li><strong>Programming Languages:</strong> Python, R</li>
-        <li><strong>Machine Learning & Data Science:</strong> Scikit-Learn, TensorFlow, NLP (SpaCy, NLTK), NumPY, Pandas, PyTorch, XGBoost, LightGBM, CatBoost, Feature Engineering, Model Optimization</li>
-        <li><strong>Database Management:</strong> MySQL, SQL, NoSQL, Snowflake</li>
-        <li><strong>Data Visualization & Analytics:</strong> Power BI, Tableau, Matplotlib, Seaborn</li>
-        <li><strong>MLOps & Deployment:</strong> Docker, Kubernetes, FastAPI, Flask, Model Monitoring (MLflow, TensorBoard)</li>
-        <li><strong>Big Data & Cloud:</strong> Google Cloud Platform (GCP), AWS, Apache Spark, Hadoop, Apache Kafka</li>
-        <li><strong>Spreadsheets:</strong> MS Excel, Google Sheets</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="briefcase-outline"></ion-icon>
-      </div>
-      <h3 class="h3 timeline-title-left">Experience</h3>
-    </div>
-    <ol class="timeline-list">
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Heuristics Pharma Perception – Data Analyst</h4>
-        <span>January 2025 – Present | New York, NY</span>
-        <ul class="timeline-text">
-          <li>Engineered a model-serving infrastructure using Kubernetes and FastAPI, reducing model inference time by 30%, ensuring real-time predictions for high-volume analytical requests in business intelligence workflows.</li>
-          <li>Developed an embeddings-based similarity model using FAISS and OpenAI embeddings, enhancing information retrieval accuracy by 15%, leading to faster access to relevant data for internal research teams.</li>
-          <li>Built and fine-tuned NLP pipelines leveraging BERT models for automated entity recognition, increasing classification precision by 18%, enabling reliable categorization of unstructured datasets for regulatory analysis.</li>
-          <li>Integrated a high-speed vector search pipeline with Neo4j and Elasticsearch, reducing data retrieval latency by 22%, allowing business users to query structured & unstructured data in under 2 seconds.</li>
-          <li>Automated model monitoring and retraining workflows using MLflow & Prefect, reducing model drift by 19%, ensuring consistent model performance and reliability across evolving datasets.</li>
-          <li>Orchestrated ETL workflows for unstructured data processing using Apache Airflow, automating data ingestion from APIs and internal sources, reducing manual processing efforts by 30%, and improving pipeline efficiency.</li>
-        </ul>
-      </li>
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Sriroz Consultants Private Limited – Business Analyst</h4>
-        <span>November 2021 – July 2023 | Pune, India</span>
-        <ul class="timeline-text">
-          <li>Redesigned SQL-based sales reports to integrate real-time customer purchase behavior analysis, reducing data processing delays by 30%, allowing executives to react to market shifts in real-time.</li>
-          <li>Performed exploratory data analysis (EDA) on customer retention patterns, identifying seasonal churn spikes, enabling the design of retention campaigns that decreased voluntary churn by 12%, preventing $40K in lost revenue.</li>
-          <li>Developed interactive Power BI dashboards that automated sales reporting for regional managers, reducing manual reporting workload by 30% and improving sales forecasting accuracy by 25%, driving $86K in optimized marketing budget allocation.</li>
-          <li>Integrated Python-based CRM automation to track lead-to-conversion journeys, allowing sales teams to prioritize high-value leads, increasing conversion rates by 20%, contributing $105K in additional revenue.</li>
-          <li>Conducted competitive pricing analysis using web-scraped competitor data, identifying underpriced product categories, increasing profit margins by 12%, resulting in $180K in additional annual revenue.</li>
-          <li>Implemented customer segmentation models to refine marketing strategies, increasing repeat purchase rates by 22%, leading to $126K in long-term customer value growth.</li>
-        </ul>
-      </li>
-    </ol>
-  </section>
-
-  <!-- Academic Projects -->
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="code-outline"></ion-icon>
-      </div>
-      <h3 class="h3 timeline-title-left">Academic Projects</h3>
-    </div>
-    <ol class="timeline-list">
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">AI-Powered Patient Risk Prediction System</h4>
-        <span>January 2025 – March 2025</span>
-        <ul class="timeline-text">
-          <li>Developed a machine learning model for early patient readmission risk detection, The XGBoost & Random Forest model achieved 90% precision, allowing hospitals to prioritize high-risk patients and reduce readmissions by 22%.</li>
-          <li>Automated patient data ingestion using Apache Airflow, streamlining data collection from Electronic Health Records (EHRs) and wearable health devices, reducing manual data handling by 25% and ensuring near real-time patient monitoring.</li>
-          <li>Implemented real-time patient monitoring with Kafka & Apache Spark Streaming, reducing response time for clinical intervention by detecting abnormal health patterns in real time, allowing medical staff to take proactive action before escalation.</li>
-          <li>Designed NLP-driven insights using BERT models, extracting critical patient risk indicators from unstructured physician notes, increasing diagnostic efficiency by 27% and improving risk stratification models.</li>
-          <li>Deployed the risk model in a HIPAA-compliant cloud infrastructure (AWS & Kubernetes), ensuring secure, scalable, and compliant handling of sensitive patient data while reducing compute costs by 18% through efficient resource allocation.</li>
-        </ul>
-      </li>
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Emotional Chatbot for Multimodal Emotion Recognition</h4>
-        <span>December 2024</span>
-        <ul class="timeline-text">
-          <li>Developed a multimodal chatbot integrating text-based Natural Language Processing (NLP) and voice analysis, achieving 90% accuracy in emotion detection through Random Forest and CNN models.</li>
-          <li>Enhanced user engagement by creating a personalized recommendation engine leveraging APIs like Spotify, YouTube, and Eventbrite for emotion-based suggestions such as music, videos, and events.</li>
-          <li>Evaluated model performance using cross-validation, achieving a F1-score of 0.88 in emotion classification.</li>
-          <li>Preprocessed text and audio data using advanced techniques and applied data augmentation to improve model robustness and performance.</li>
-          <li>Built a Flask-based web interface supporting real-time interaction, delivering applications in healthcare, education, and customer support with use cases like mental health monitoring and adaptive learning systems.</li>
-        </ul>
-      </li>
-    </ol>
-  </section>
-
-  <!-- Certifications -->
- <section class="certifications">
-    <div class="content-card" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px;">
-      <h3 class="h3 skills-title">Certifications</h3>
-      <ul class="skills-list">
-        <li>Learning SnowflakeDB</li>
-        <li>Microsoft Project for the Web: Reporting with Power BI</li>
-        <li>MySQL Data Analysis</li>
-        <li>BCG - Data Science Job Simulation</li>
-        <li>Goldman Sachs - Software Engineering Job Simulation</li>
-        <li>Quantium - Data Analytics Job Simulation</li>
-        <li>R for Data Science: Analysis and Visualization</li>
-        <li>Excel Skills for Business: Intermediate I & 2</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section class="timeline">
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="school-outline"></ion-icon>
-      </div>
-      <h3 class="h3 timeline-title-left">Education</h3>
-    </div>
-    <ol class="timeline-list">
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Pace University, Seidenberg School of Computer Science, and Information Systems</h4>
-        <span>2023 – 2025 | New York</span>
-        <p class="timeline-text">MS in Information Systems | Concentration: Information Systems | Honors: Masters</p>
-      </li>
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Savitribai Phule Pune University, Modern Institute of Business Studies</h4>
-        <span>2020 – 2022 | Pune, India</span>
-        <p class="timeline-text">MBA | Concentration: Business Analytics | Honors: Masters</p>
-      </li>
-      <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Savitribai Phule Pune University, Dr. D. Y. Patil College of Arts, Commerce and Science</h4>
-        <span>2017 – 2020 | Pune, India</span>
-        <p class="timeline-text">BBA | Concentration: Human Resource Management | Honors: Bachelors</p>
-      </li>
-    </ol>
-  </section>
 </section>
 
-<!-- JS -->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/lightbox.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/jquery.mixitup.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/typed.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-</html>
