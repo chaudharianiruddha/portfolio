@@ -128,32 +128,20 @@
 
 }(jQuery));
 
-    /*::::::::::::::::::::::::::::::::::::::
-      Skills Animation
-    ::::::::::::::::::::::::::::::::::::::*/
+  document.addEventListener("DOMContentLoaded", function () {
+  const skillbars = document.querySelectorAll('.skillbar');
 
-    function animateSkills() {
-        $('.skill-bar').each(function () {
-            const bar = $(this);
-            if (bar.is(':visible') && isScrolledIntoView(bar) && !bar.hasClass('animated')) {
-                bar.addClass('animated');
-                bar.find('.skill-progress').animate({
-                    width: bar.attr('data-percent')
-                }, 2000);
-            }
-        });
-    }
-
-    function isScrolledIntoView(elem) {
-        const docViewTop = $(window).scrollTop();
-        const docViewBottom = docViewTop + $(window).height();
-        const elemTop = $(elem).offset().top;
-        const elemBottom = elemTop + $(elem).height();
-
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-
-    $(window).on('scroll resize load', function () {
-        animateSkills();
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const skillbar = entry.target;
+        const fill = skillbar.querySelector('.skillbar-bar');
+        const percent = skillbar.getAttribute('data-percent');
+        fill.style.width = percent;
+        observer.unobserve(skillbar); // Animate only once
+      }
     });
+  }, { threshold: 0.4 });
 
+  skillbars.forEach(skillbar => observer.observe(skillbar));
+});
