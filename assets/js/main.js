@@ -128,22 +128,39 @@
 
 }(jQuery));
 
-document.addEventListener("DOMContentLoaded", function () {
-  const skillbars = document.querySelectorAll('.skillbar');
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillbars = document.querySelectorAll('.skillbar');
+    let animated = false;
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target.querySelector('.skillbar-bar');
-        const percent = entry.target.getAttribute('data-percent');
+    function animateBars() {
+      if (animated) return;
+      skillbars.forEach(skillbar => {
+        const bar = skillbar.querySelector('.skillbar-bar');
+        const percent = skillbar.getAttribute('data-percent');
         bar.style.width = percent;
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.4
-  });
+      });
+      animated = true;
+    }
 
-  skillbars.forEach(skillbar => observer.observe(skillbar));
-});
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateBars();
+          obs.disconnect(); // Run once
+        }
+      });
+    }, {
+      threshold: 0.05 // Very low, good for tablets
+    });
+
+    skillbars.forEach(skillbar => observer.observe(skillbar));
+
+    // Fallback if scroll doesn’t happen (e.g., tablets, no scroll needed)
+    setTimeout(() => {
+      if (!animated) animateBars();
+    }, 2000);
+  });
+</script>
+
 
