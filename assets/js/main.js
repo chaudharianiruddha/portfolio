@@ -128,39 +128,19 @@
 
 }(jQuery));
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const skillbars = document.querySelectorAll('.skillbar');
-    let animated = false;
+document.addEventListener("DOMContentLoaded", function () {
+  const skillbars = document.querySelectorAll('.skillbar');
 
-    function animateBars() {
-      if (animated) return;
-      skillbars.forEach(skillbar => {
-        const bar = skillbar.querySelector('.skillbar-bar');
-        const percent = skillbar.getAttribute('data-percent');
-        bar.style.width = percent;
-      });
-      animated = true;
-    }
+  skillbars.forEach(skillbar => {
+    const bar = skillbar.querySelector('.skillbar-bar');
+    const percent = skillbar.getAttribute('data-percent');
 
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateBars();
-          obs.disconnect(); // Run once
-        }
-      });
-    }, {
-      threshold: 0.05 // Very low, good for tablets
-    });
-
-    skillbars.forEach(skillbar => observer.observe(skillbar));
-
-    // Fallback if scroll doesn’t happen (e.g., tablets, no scroll needed)
+    // Optional delay between each animation for smoothness
     setTimeout(() => {
-      if (!animated) animateBars();
-    }, 2000);
+      bar.style.width = percent;
+    }, 100);
   });
-</script>
+});
+
 
 
