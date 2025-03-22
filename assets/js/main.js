@@ -137,15 +137,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const bar = entry.target.querySelector('.skillbar-bar');
         const percent = entry.target.getAttribute('data-percent');
         bar.style.width = percent;
-        obs.unobserve(entry.target); // animate once
+        obs.unobserve(entry.target);
       }
     });
   }, {
     threshold: 0.4
   });
 
-  skillbars.forEach(skillbar => {
-    observer.observe(skillbar);
-  });
+  skillbars.forEach(skillbar => observer.observe(skillbar));
 });
 
