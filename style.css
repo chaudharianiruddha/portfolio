@@ -454,6 +454,31 @@ button:focus {
     font-size: 100%;
 }
 
+.leap-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: -5px;
+}
+
+.leap-title span {
+    color: #ffc900;
+}
+
+.leap-logo-link {
+    display: inline-block;
+    line-height: 0;
+    padding: 6px 10px;
+    background-color: #111;
+    border-radius: 6px;
+}
+
+.leap-logo {
+    height: 20px;
+    width: auto;
+    display: block;
+}
+
 .about-content h4 {
     font-weight: 400;
     font-size: 22px;
